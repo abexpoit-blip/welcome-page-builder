@@ -32,26 +32,28 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background font-body text-foreground selection:bg-primary/30 overflow-x-hidden dark">
+    <div className="min-h-screen font-body text-foreground selection:bg-primary/30 overflow-x-hidden">
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;500;600&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap"
       />
 
-      {/* Ambient background glows */}
+      {/* Ambient background glows — colorful aurora */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute -top-[20%] -left-[10%] size-[800px] bg-primary/20 rounded-full blur-[160px] opacity-40 animate-glow-drift" />
+        <div className="absolute -top-[20%] -left-[10%] size-[800px] bg-primary/30 rounded-full blur-[160px] opacity-70 animate-glow-drift" />
         <div
-          className="absolute top-[40%] -right-[10%] size-[600px] bg-neon-purple/20 rounded-full blur-[140px] opacity-30 animate-glow-drift"
+          className="absolute top-[35%] -right-[10%] size-[700px] bg-accent/30 rounded-full blur-[150px] opacity-60 animate-glow-drift"
           style={{ animationDirection: "reverse", animationDuration: "25s" }}
         />
-        <div className="absolute bottom-0 left-1/3 size-[500px] bg-emerald-500/10 rounded-full blur-[120px] opacity-40" />
+        <div className="absolute bottom-[5%] left-1/4 size-[600px] bg-neon/30 rounded-full blur-[140px] opacity-50" />
+        <div className="absolute top-[60%] left-[5%] size-[500px] bg-neon-purple/25 rounded-full blur-[130px] opacity-50" />
       </div>
 
+
       {/* Navbar */}
-      <nav className="fixed top-0 w-full z-50 border-b border-border/50 backdrop-blur-md px-6 py-4 flex justify-between items-center bg-background/40">
+      <nav className="fixed top-0 w-full z-50 border-b border-border/50 backdrop-blur-xl px-6 py-4 flex justify-between items-center bg-white/60">
         <div className="flex items-center gap-2">
-          <div className="size-9 bg-gradient-to-br from-primary to-neon-purple rounded-lg flex items-center justify-center font-display font-bold text-background">
+          <div className="size-9 rounded-lg flex items-center justify-center font-display font-bold text-primary-foreground" style={{ backgroundImage: "var(--gradient-brand)" }}>
             S
           </div>
           <span className="font-display font-bold text-lg tracking-tight">SIGNAL PRO</span>
@@ -71,11 +73,13 @@ function Index() {
           href={TELEGRAM_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-2 bg-primary text-background font-semibold hover:scale-105 transition-transform rounded-full text-sm"
+          className="px-5 py-2 text-primary-foreground font-semibold hover:scale-105 transition-transform rounded-full text-sm shadow-lg shadow-primary/30"
+          style={{ backgroundImage: "var(--gradient-brand)" }}
         >
           Join Free
         </a>
       </nav>
+
 
       {/* Hero */}
       <section className="relative pt-32 md:pt-40 pb-16 px-6 max-w-7xl mx-auto z-10">
@@ -91,7 +95,7 @@ function Index() {
             style={{ animationDelay: "100ms", fontFamily: "'Hind Siliguri', sans-serif" }}
           >
             Quotex Trading এ{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-neon-purple to-primary">
+            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "var(--gradient-brand)" }}>
               লস
             </span>{" "}
             হচ্ছে?
@@ -105,7 +109,7 @@ function Index() {
             }}
           >
             আমাদের <span className="text-primary font-semibold">Public Group</span> এ একদম{" "}
-            <span className="text-emerald-400 font-semibold">ফ্রি</span> জয়েন হয়ে প্রতিদিন
+            <span className="text-accent font-semibold">ফ্রি</span> জয়েন হয়ে প্রতিদিন
             পান <span className="text-foreground font-semibold">Live Signal</span>, Market Update
             এবং Trading Guideline।
           </p>
@@ -118,8 +122,8 @@ function Index() {
               href={TELEGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group px-8 py-4 bg-gradient-to-r from-primary to-neon-purple text-background font-bold rounded-full hover:scale-105 transition-transform text-base tracking-wide flex items-center gap-3 shadow-2xl shadow-primary/30"
-              style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
+              className="group px-8 py-4 text-primary-foreground font-bold rounded-full hover:scale-105 transition-transform text-base tracking-wide flex items-center gap-3 shadow-2xl shadow-primary/40"
+              style={{ fontFamily: "'Hind Siliguri', sans-serif", backgroundImage: "var(--gradient-brand)" }}
             >
               <svg className="size-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.941z" />
@@ -128,12 +132,13 @@ function Index() {
             </a>
             <a
               href="#features"
-              className="px-8 py-4 bg-glass ring-1 ring-border rounded-full hover:ring-primary/50 transition-all text-base backdrop-blur-xl"
+              className="px-8 py-4 bg-white/70 ring-1 ring-primary/20 rounded-full hover:ring-primary/60 transition-all text-base backdrop-blur-xl"
               style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
             >
               কী কী পাবেন দেখুন →
             </a>
           </div>
+
 
           {/* Stats row */}
           <div
@@ -145,7 +150,7 @@ function Index() {
               { n: "87%", l: "Win Rate" },
               { n: "2×", l: "Daily Signals" },
             ].map((s) => (
-              <div key={s.l} className="p-4 bg-glass ring-1 ring-border rounded-2xl backdrop-blur-xl">
+              <div key={s.l} className="p-4 bg-white/70 ring-1 ring-primary/20 rounded-2xl backdrop-blur-xl shadow-lg shadow-primary/10">
                 <div className="font-display text-2xl md:text-4xl font-bold text-primary">
                   {s.n}
                 </div>
@@ -158,7 +163,7 @@ function Index() {
             className="animate-reveal w-full max-w-5xl mt-16"
             style={{ animationDelay: "500ms" }}
           >
-            <div className="relative aspect-video rounded-3xl overflow-hidden ring-1 ring-white/20 bg-glass backdrop-blur-2xl shadow-2xl shadow-primary/20">
+            <div className="relative aspect-video rounded-3xl overflow-hidden ring-1 ring-primary/25 bg-white/50 backdrop-blur-2xl shadow-2xl shadow-primary/25">
               <img
                 src={heroImg.url}
                 alt="Live trading signal dashboard"
@@ -166,30 +171,31 @@ function Index() {
                 height={1088}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-6 left-6 px-3 py-2 bg-background/70 backdrop-blur-xl ring-1 ring-white/10 rounded-xl animate-float">
+              <div className="absolute top-6 left-6 px-3 py-2 bg-white/85 backdrop-blur-xl ring-1 ring-primary/20 rounded-xl animate-float shadow-lg">
                 <div className="flex items-center gap-2">
-                  <span className="size-2 bg-emerald-400 rounded-full animate-pulse" />
-                  <span className="font-mono text-[10px] text-emerald-400 uppercase tracking-widest">
+                  <span className="size-2 bg-emerald-500 rounded-full animate-pulse" />
+                  <span className="font-mono text-[10px] text-emerald-600 uppercase tracking-widest">
                     Live · EUR/USD
                   </span>
                 </div>
               </div>
               <div
-                className="absolute bottom-6 right-6 px-4 py-3 bg-background/70 backdrop-blur-xl ring-1 ring-emerald-400/40 rounded-xl animate-float"
+                className="absolute bottom-6 right-6 px-4 py-3 bg-white/85 backdrop-blur-xl ring-1 ring-emerald-500/40 rounded-xl animate-float shadow-lg"
                 style={{ animationDelay: "1.5s" }}
               >
                 <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
                   Signal
                 </div>
-                <div className="font-display text-xl font-bold text-emerald-400">↑ UP · 1M</div>
+                <div className="font-display text-xl font-bold text-emerald-600">↑ UP · 1M</div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
       {/* Marquee */}
-      <section className="py-8 border-y border-border/30 overflow-hidden bg-background/40">
+      <section className="py-8 border-y border-primary/20 overflow-hidden bg-white/50 backdrop-blur-xl relative z-10">
         <div className="flex gap-16 animate-marquee whitespace-nowrap font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground/70">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex gap-16 shrink-0">
@@ -259,7 +265,8 @@ function Index() {
           ].map((f) => (
             <div
               key={f.tag}
-              className="p-8 bg-glass ring-1 ring-border rounded-[2rem] hover:ring-primary/50 transition-all duration-500 flex flex-col gap-5 group backdrop-blur-xl"
+              className="p-8 bg-white/70 ring-1 ring-primary/15 rounded-[2rem] hover:ring-primary/50 hover:-translate-y-1 transition-all duration-500 flex flex-col gap-5 group backdrop-blur-xl shadow-lg shadow-primary/5 hover:shadow-primary/20"
+
             >
               <div className="flex items-center justify-between">
                 <div className="font-mono text-primary text-xs">{f.tag}</div>
@@ -287,7 +294,7 @@ function Index() {
       {/* Signal Schedule */}
       <section
         id="schedule"
-        className="py-24 bg-primary/5 border-y border-border/20 relative z-10"
+        className="py-24 bg-gradient-to-br from-primary/10 via-accent/10 to-neon/10 border-y border-primary/20 relative z-10"
       >
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-16 items-center">
           <div className="flex-1 space-y-6">
@@ -299,9 +306,10 @@ function Index() {
               style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
             >
               প্রতিদিন{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-neon-purple">
+              <span className="text-transparent bg-clip-text" style={{ backgroundImage: "var(--gradient-brand)" }}>
                 ২ বার
               </span>{" "}
+
               Free Signal।
             </h2>
             <p
@@ -319,7 +327,7 @@ function Index() {
               ].map((s) => (
                 <div
                   key={s.label}
-                  className="flex items-center justify-between p-4 bg-glass ring-1 ring-border rounded-2xl backdrop-blur-xl"
+                  className="flex items-center justify-between p-4 bg-white/70 ring-1 ring-primary/15 rounded-2xl backdrop-blur-xl shadow-md shadow-primary/5"
                 >
                   <div className="flex items-center gap-4">
                     <div className="font-display text-2xl font-bold text-primary">{s.time}</div>
@@ -338,8 +346,9 @@ function Index() {
             </div>
           </div>
           <div className="flex-1 relative">
-            <div className="absolute inset-0 bg-emerald-500/20 blur-[100px] rounded-full" />
-            <div className="relative w-full aspect-square bg-glass backdrop-blur-3xl ring-1 ring-white/10 rounded-3xl overflow-hidden">
+            <div className="absolute inset-0 bg-accent/25 blur-[100px] rounded-full" />
+            <div className="relative w-full aspect-square bg-white/60 backdrop-blur-3xl ring-1 ring-primary/25 rounded-3xl overflow-hidden shadow-2xl shadow-primary/20">
+
               <img
                 src={chartImg.url}
                 alt="Live trading chart"
@@ -367,7 +376,7 @@ function Index() {
             profit এ থাকি। ভাই সত্যি অসাধারণ কাজ করছেন।"
           </blockquote>
           <div className="flex items-center justify-center gap-4">
-            <div className="size-12 rounded-full bg-gradient-to-br from-primary to-neon-purple" />
+            <div className="size-12 rounded-full shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }} />
             <div className="text-left">
               <p
                 className="text-sm font-bold"
@@ -385,9 +394,11 @@ function Index() {
 
       {/* Final CTA */}
       <section className="py-24 px-6 relative z-10">
-        <div className="max-w-5xl mx-auto p-8 md:p-16 bg-gradient-to-br from-primary/10 via-neon-purple/10 to-transparent ring-1 ring-primary/30 rounded-[3rem] backdrop-blur-xl text-center relative overflow-hidden">
-          <div className="absolute -top-20 -right-20 size-64 bg-primary/30 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 -left-20 size-64 bg-neon-purple/30 rounded-full blur-3xl" />
+        <div className="max-w-5xl mx-auto p-8 md:p-16 bg-white/70 ring-1 ring-primary/30 rounded-[3rem] backdrop-blur-xl text-center relative overflow-hidden shadow-2xl shadow-primary/20">
+          <div className="absolute -top-20 -right-20 size-64 bg-accent/40 rounded-full blur-3xl" />
+          <div className="absolute -bottom-20 -left-20 size-64 bg-primary/40 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 bg-neon/20 rounded-full blur-3xl" />
+
           <div className="relative">
             <h2
               className="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight text-balance"
@@ -405,8 +416,9 @@ function Index() {
               href={TELEGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-primary to-neon-purple text-background font-bold rounded-full hover:scale-105 transition-transform text-lg shadow-2xl shadow-primary/40"
-              style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
+              className="inline-flex items-center gap-3 px-10 py-5 text-primary-foreground font-bold rounded-full hover:scale-105 transition-transform text-lg shadow-2xl shadow-primary/50"
+              style={{ fontFamily: "'Hind Siliguri', sans-serif", backgroundImage: "var(--gradient-brand)" }}
+
             >
               <svg className="size-6" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.941z" />
@@ -465,7 +477,7 @@ function Index() {
           ].map((item) => (
             <details
               key={item.q}
-              className="group p-6 bg-glass ring-1 ring-border rounded-2xl backdrop-blur-xl hover:ring-primary/40 transition-all"
+              className="group p-6 bg-white/70 ring-1 ring-primary/15 rounded-2xl backdrop-blur-xl hover:ring-primary/50 transition-all shadow-md shadow-primary/5"
             >
               <summary
                 className="flex items-center justify-between cursor-pointer font-semibold text-lg"
@@ -492,9 +504,10 @@ function Index() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8 text-xs font-mono uppercase tracking-widest text-muted-foreground">
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2 mb-2">
-              <div className="size-7 bg-gradient-to-br from-primary to-neon-purple rounded-md flex items-center justify-center font-display font-bold text-background text-xs">
+              <div className="size-7 rounded-md flex items-center justify-center font-display font-bold text-primary-foreground text-xs" style={{ backgroundImage: "var(--gradient-brand)" }}>
                 S
               </div>
+
               <span className="font-display font-bold text-sm text-foreground normal-case tracking-tight">
                 SIGNAL PRO
               </span>
