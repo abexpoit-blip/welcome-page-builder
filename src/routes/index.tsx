@@ -298,9 +298,11 @@ function Index() {
       >
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-16 items-center">
           <div className="flex-1 space-y-6">
-            <div className="font-mono text-xs text-primary uppercase tracking-widest">
-              // Signal Schedule
-            </div>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30 w-fit" style={{ backgroundImage: "var(--gradient-brand)" }}>
+              <span className="size-1.5 bg-white/90 rounded-full animate-pulse" />
+              Signal Schedule
+            </span>
+
             <h2
               className="font-display text-4xl md:text-5xl font-bold tracking-tight text-balance leading-tight"
               style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
