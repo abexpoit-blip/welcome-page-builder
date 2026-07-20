@@ -166,23 +166,26 @@ function Index() {
                 height={1088}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-6 left-6 px-3 py-2 bg-white/85 backdrop-blur-xl ring-1 ring-primary/20 rounded-xl animate-float shadow-lg">
-                <div className="flex items-center gap-2">
-                  <span className="size-2 bg-emerald-500 rounded-full animate-pulse" />
-                  <span className="font-mono text-[10px] text-emerald-600 uppercase tracking-widest">
+              <div className="absolute top-6 left-6 px-4 py-2.5 bg-slate-950/85 backdrop-blur-xl ring-1 ring-emerald-400/50 rounded-xl animate-float shadow-2xl shadow-emerald-500/30">
+                <div className="flex items-center gap-2.5">
+                  <span className="size-2 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
+                  <span className="font-mono text-[11px] text-emerald-300 uppercase tracking-[0.2em] font-semibold">
                     Live · EUR/USD
                   </span>
                 </div>
               </div>
               <div
-                className="absolute bottom-6 right-6 px-4 py-3 bg-white/85 backdrop-blur-xl ring-1 ring-emerald-500/40 rounded-xl animate-float shadow-lg"
+                className="absolute bottom-6 right-6 px-5 py-3 bg-slate-950/90 backdrop-blur-xl ring-1 ring-emerald-400/60 rounded-xl animate-float shadow-2xl shadow-emerald-500/40"
                 style={{ animationDelay: "1.5s" }}
               >
-                <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
+                <div className="font-mono text-[10px] text-slate-400 uppercase tracking-[0.2em] mb-0.5">
                   Signal
                 </div>
-                <div className="font-display text-xl font-bold text-emerald-600">↑ UP · 1M</div>
+                <div className="font-display text-xl font-bold text-emerald-400 flex items-center gap-1.5">
+                  <span className="text-2xl">↑</span> UP · 1M
+                </div>
               </div>
+
             </div>
           </div>
 
