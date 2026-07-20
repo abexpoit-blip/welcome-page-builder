@@ -367,9 +367,11 @@ function Index() {
       {/* Testimonial */}
       <section className="py-32 px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="font-mono text-xs text-primary uppercase tracking-widest mb-6">
-            // Real Feedback
-          </div>
+          <span className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
+            <span className="size-1.5 bg-white/90 rounded-full" />
+            Real Feedback
+          </span>
+
           <blockquote
             className="font-display text-2xl md:text-4xl font-semibold leading-tight tracking-tight text-balance mb-12"
             style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
