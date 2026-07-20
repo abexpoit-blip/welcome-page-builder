@@ -364,6 +364,60 @@ function Index() {
         </div>
       </section>
 
+      {/* Telegram Join — dedicated prominent block */}
+      <section id="telegram" className="py-24 px-6 relative z-10">
+        <div className="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] p-10 md:p-16 shadow-2xl shadow-primary/30 ring-1 ring-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
+          <div className="absolute -top-24 -right-24 size-80 rounded-full bg-white/20 blur-3xl" />
+          <div className="absolute -bottom-24 -left-24 size-80 rounded-full bg-white/15 blur-3xl" />
+          <div className="relative flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1 text-primary-foreground">
+              <span className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md ring-1 ring-white/30 font-mono text-[10px] uppercase tracking-[0.25em] font-semibold">
+                <span className="size-1.5 bg-white rounded-full animate-pulse" />
+                Telegram Group
+              </span>
+              <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-4" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>
+                এক ক্লিকে Telegram Public Group এ Join করুন
+              </h2>
+              <p className="text-primary-foreground/90 text-lg max-w-xl mb-8" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>
+                Daily Free Live Signal, News Signal, Market Update ও Trading Guideline — সব কিছু একদম ফ্রি, সরাসরি Telegram এ।
+              </p>
+              <a
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform text-base shadow-2xl"
+                style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
+              >
+                <svg className="size-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.941z" />
+                </svg>
+                Telegram এ Join করুন — ফ্রি
+              </a>
+              <div className="mt-6 flex flex-wrap items-center gap-5 text-xs text-primary-foreground/80 font-mono uppercase tracking-widest">
+                <span className="flex items-center gap-2"><span className="size-1.5 bg-white rounded-full" /> Instant Join</span>
+                <span className="flex items-center gap-2"><span className="size-1.5 bg-white rounded-full" /> No Fee</span>
+                <span className="flex items-center gap-2"><span className="size-1.5 bg-white rounded-full" /> 50K+ Members</span>
+              </div>
+            </div>
+            <div className="w-full md:w-80 shrink-0">
+              <div className="rounded-3xl bg-white/95 backdrop-blur-xl p-8 shadow-2xl ring-1 ring-white/50 text-center">
+                <div className="mx-auto size-20 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-primary/40" style={{ backgroundImage: "var(--gradient-brand)" }}>
+                  <svg className="size-10 text-primary-foreground" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.941z" />
+                  </svg>
+                </div>
+                <div className="font-display font-bold text-lg text-foreground" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>Signal Pro Public</div>
+                <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mt-1">Free Signal Channel</div>
+                <div className="mt-5 flex items-center justify-center gap-2 text-xs font-semibold text-emerald-600">
+                  <span className="size-2 bg-emerald-500 rounded-full animate-pulse" />
+                  Live · Signal Chalu Ache
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonial */}
       <section className="py-32 px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
