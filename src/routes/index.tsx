@@ -269,7 +269,7 @@ function Index() {
 
             >
               <div className="flex items-center justify-between">
-                <div className="font-mono text-primary text-xs">{f.tag}</div>
+                <span className="font-mono text-[10px] uppercase tracking-[0.25em] font-semibold text-transparent bg-clip-text" style={{ backgroundImage: "var(--gradient-brand)" }}>{f.tag}</span>
                 <div className="text-3xl grayscale group-hover:grayscale-0 transition-all">
                   {f.icon}
                 </div>
