@@ -450,9 +450,11 @@ function Index() {
       {/* FAQ */}
       <section id="faq" className="py-24 px-6 max-w-4xl mx-auto relative z-10">
         <div className="mb-12">
-          <div className="font-mono text-xs text-primary uppercase tracking-widest mb-4">
-            // Common Questions
-          </div>
+          <span className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
+            <span className="size-1.5 bg-white/90 rounded-full" />
+            Common Questions
+          </span>
+
           <h2
             className="font-display text-4xl md:text-5xl font-bold tracking-tight"
             style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
