@@ -227,37 +227,37 @@ function Index() {
         <div className="grid md:grid-cols-3 gap-6">
           {[
             {
-              tag: "01 // SIGNAL",
+              tag: "01 · SIGNAL",
               title: "Daily Live Signal",
               desc: "প্রতিদিন ২টায় ও রাত ৮টায় Free Live Signal সরাসরি Public Group এ।",
               icon: "📡",
             },
             {
-              tag: "02 // NEWS",
+              tag: "02 · NEWS",
               title: "News Signal",
               desc: "মার্কেট মুভ করার আগেই News Signal এবং economic event alert একদম ফ্রি।",
               icon: "📰",
             },
             {
-              tag: "03 // GUIDE",
+              tag: "03 · GUIDE",
               title: "Trading Guideline",
               desc: "ট্রেডিং সমস্যার সমাধান, স্ট্র্যাটেজি এবং step-by-step guideline পাবেন।",
               icon: "🎯",
             },
             {
-              tag: "04 // SUPPORT",
+              tag: "04 · SUPPORT",
               title: "Live Support",
               desc: "যেকোনো সমস্যা? Public Group এ post করুন, দ্রুত reply পাবেন admin থেকে।",
               icon: "💬",
             },
             {
-              tag: "05 // UPDATE",
+              tag: "05 · UPDATE",
               title: "Market Update",
               desc: "প্রতিদিনের market analysis, trend update এবং high-probability pair alerts।",
               icon: "📊",
             },
             {
-              tag: "06 // FREE",
+              tag: "06 · FREE",
               title: "১০০% ফ্রি Access",
               desc: "কোনো ফি নেই, কোনো লুকানো চার্জ নেই। শুধু Join করুন — বাকিটা আমাদের কাজ।",
               icon: "🔓",
