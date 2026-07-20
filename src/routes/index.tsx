@@ -84,15 +84,9 @@ function Index() {
       {/* Hero */}
       <section className="relative pt-32 md:pt-40 pb-16 px-6 max-w-7xl mx-auto z-10">
         <div className="flex flex-col items-center text-center">
-          <div className="animate-reveal mb-6 px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center gap-2">
-            <span className="size-2 bg-emerald-400 rounded-full animate-pulse" />
-            <span className="font-mono text-[10px] text-emerald-400 uppercase tracking-widest">
-              Live Signal Chalu Ache
-            </span>
-          </div>
           <h1
             className="animate-reveal font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-balance mb-8"
-            style={{ animationDelay: "100ms", fontFamily: "'Hind Siliguri', sans-serif" }}
+            style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
           >
             Quotex Trading এ{" "}
             <span className="text-transparent bg-clip-text" style={{ backgroundImage: "var(--gradient-brand)" }}>
@@ -100,6 +94,7 @@ function Index() {
             </span>{" "}
             হচ্ছে?
           </h1>
+
           <p
             className="animate-reveal text-muted-foreground text-lg md:text-xl max-w-2xl text-pretty mb-4"
             style={{
@@ -171,23 +166,26 @@ function Index() {
                 height={1088}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-6 left-6 px-3 py-2 bg-white/85 backdrop-blur-xl ring-1 ring-primary/20 rounded-xl animate-float shadow-lg">
-                <div className="flex items-center gap-2">
-                  <span className="size-2 bg-emerald-500 rounded-full animate-pulse" />
-                  <span className="font-mono text-[10px] text-emerald-600 uppercase tracking-widest">
+              <div className="absolute top-6 left-6 px-4 py-2.5 bg-slate-950/85 backdrop-blur-xl ring-1 ring-emerald-400/50 rounded-xl animate-float shadow-2xl shadow-emerald-500/30">
+                <div className="flex items-center gap-2.5">
+                  <span className="size-2 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
+                  <span className="font-mono text-[11px] text-emerald-300 uppercase tracking-[0.2em] font-semibold">
                     Live · EUR/USD
                   </span>
                 </div>
               </div>
               <div
-                className="absolute bottom-6 right-6 px-4 py-3 bg-white/85 backdrop-blur-xl ring-1 ring-emerald-500/40 rounded-xl animate-float shadow-lg"
+                className="absolute bottom-6 right-6 px-5 py-3 bg-slate-950/90 backdrop-blur-xl ring-1 ring-emerald-400/60 rounded-xl animate-float shadow-2xl shadow-emerald-500/40"
                 style={{ animationDelay: "1.5s" }}
               >
-                <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
+                <div className="font-mono text-[10px] text-slate-400 uppercase tracking-[0.2em] mb-0.5">
                   Signal
                 </div>
-                <div className="font-display text-xl font-bold text-emerald-600">↑ UP · 1M</div>
+                <div className="font-display text-xl font-bold text-emerald-400 flex items-center gap-1.5">
+                  <span className="text-2xl">↑</span> UP · 1M
+                </div>
               </div>
+
             </div>
           </div>
 
@@ -214,9 +212,11 @@ function Index() {
       {/* Features */}
       <section id="features" className="py-24 px-6 max-w-7xl mx-auto z-10 relative">
         <div className="mb-16 max-w-2xl">
-          <div className="font-mono text-xs text-primary uppercase tracking-widest mb-4">
-            // Group এ কী কী পাবেন
-          </div>
+          <span className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
+            <span className="size-1.5 bg-white/90 rounded-full" />
+            Group Perks
+          </span>
+
           <h2
             className="font-display text-4xl md:text-6xl font-bold tracking-tight text-balance"
             style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
@@ -298,9 +298,11 @@ function Index() {
       >
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-16 items-center">
           <div className="flex-1 space-y-6">
-            <div className="font-mono text-xs text-primary uppercase tracking-widest">
-              // Signal Schedule
-            </div>
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30 w-fit" style={{ backgroundImage: "var(--gradient-brand)" }}>
+              <span className="size-1.5 bg-white/90 rounded-full animate-pulse" />
+              Signal Schedule
+            </span>
+
             <h2
               className="font-display text-4xl md:text-5xl font-bold tracking-tight text-balance leading-tight"
               style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
@@ -365,9 +367,11 @@ function Index() {
       {/* Testimonial */}
       <section className="py-32 px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="font-mono text-xs text-primary uppercase tracking-widest mb-6">
-            // Real Feedback
-          </div>
+          <span className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
+            <span className="size-1.5 bg-white/90 rounded-full" />
+            Real Feedback
+          </span>
+
           <blockquote
             className="font-display text-2xl md:text-4xl font-semibold leading-tight tracking-tight text-balance mb-12"
             style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
@@ -446,9 +450,11 @@ function Index() {
       {/* FAQ */}
       <section id="faq" className="py-24 px-6 max-w-4xl mx-auto relative z-10">
         <div className="mb-12">
-          <div className="font-mono text-xs text-primary uppercase tracking-widest mb-4">
-            // Common Questions
-          </div>
+          <span className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
+            <span className="size-1.5 bg-white/90 rounded-full" />
+            Common Questions
+          </span>
+
           <h2
             className="font-display text-4xl md:text-5xl font-bold tracking-tight"
             style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
