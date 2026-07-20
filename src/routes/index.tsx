@@ -84,15 +84,9 @@ function Index() {
       {/* Hero */}
       <section className="relative pt-32 md:pt-40 pb-16 px-6 max-w-7xl mx-auto z-10">
         <div className="flex flex-col items-center text-center">
-          <div className="animate-reveal mb-6 px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center gap-2">
-            <span className="size-2 bg-emerald-400 rounded-full animate-pulse" />
-            <span className="font-mono text-[10px] text-emerald-400 uppercase tracking-widest">
-              Live Signal Chalu Ache
-            </span>
-          </div>
           <h1
             className="animate-reveal font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-balance mb-8"
-            style={{ animationDelay: "100ms", fontFamily: "'Hind Siliguri', sans-serif" }}
+            style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
           >
             Quotex Trading এ{" "}
             <span className="text-transparent bg-clip-text" style={{ backgroundImage: "var(--gradient-brand)" }}>
@@ -100,6 +94,7 @@ function Index() {
             </span>{" "}
             হচ্ছে?
           </h1>
+
           <p
             className="animate-reveal text-muted-foreground text-lg md:text-xl max-w-2xl text-pretty mb-4"
             style={{
