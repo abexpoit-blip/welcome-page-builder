@@ -212,9 +212,11 @@ function Index() {
       {/* Features */}
       <section id="features" className="py-24 px-6 max-w-7xl mx-auto z-10 relative">
         <div className="mb-16 max-w-2xl">
-          <div className="font-mono text-xs text-primary uppercase tracking-widest mb-4">
-            // Group এ কী কী পাবেন
-          </div>
+          <span className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
+            <span className="size-1.5 bg-white/90 rounded-full" />
+            Group Perks
+          </span>
+
           <h2
             className="font-display text-4xl md:text-6xl font-bold tracking-tight text-balance"
             style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
