@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import heroImg from "@/assets/trading-hero.jpg.asset.json";
 import chartImg from "@/assets/trading-chart.jpg.asset.json";
 
-const TELEGRAM_URL = "https://t.me/";
+const TELEGRAM_URL = "https://t.me/Mithitrader07";
+const AUTO_REDIRECT_SECONDS = 5;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,8 +33,35 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [countdown, setCountdown] = useState(AUTO_REDIRECT_SECONDS);
+  const [redirected, setRedirected] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    // Skip if user already came back from Telegram
+    if (sessionStorage.getItem("tg_redirected") === "1") {
+      setRedirected(true);
+      return;
+    }
+    const tick = setInterval(() => {
+      setCountdown((c) => (c > 0 ? c - 1 : 0));
+    }, 1000);
+    const timer = setTimeout(() => {
+      sessionStorage.setItem("tg_redirected", "1");
+      setRedirected(true);
+      window.open(TELEGRAM_URL, "_blank", "noopener,noreferrer");
+      // fallback for popup blockers — same-tab redirect
+      window.location.href = TELEGRAM_URL;
+    }, AUTO_REDIRECT_SECONDS * 1000);
+    return () => {
+      clearInterval(tick);
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen font-body text-foreground selection:bg-primary/30 overflow-x-hidden">
+
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;500;600&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap"
@@ -50,13 +79,37 @@ function Index() {
       </div>
 
 
+      {/* Auto-redirect banner */}
+      {!redirected && (
+        <div
+          className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[60] px-4 sm:px-6 py-3 rounded-full text-primary-foreground text-xs sm:text-sm font-semibold shadow-2xl shadow-primary/40 flex items-center gap-3 backdrop-blur-xl max-w-[92vw]"
+          style={{ backgroundImage: "var(--gradient-brand)", fontFamily: "'Hind Siliguri', sans-serif" }}
+        >
+          <span className="size-2 bg-white rounded-full animate-pulse shrink-0" />
+          <span className="truncate">
+            {countdown > 0
+              ? `${countdown} সেকেন্ড এ Telegram এ redirect হবে...`
+              : "Telegram এ redirect হচ্ছে..."}
+          </span>
+          <a
+            href={TELEGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 shrink-0 px-3 py-1 bg-white/25 hover:bg-white/40 rounded-full text-[11px] font-bold transition"
+          >
+            এখনি Join
+          </a>
+        </div>
+      )}
+
+
       {/* Navbar */}
-      <nav className="fixed top-0 w-full z-50 border-b border-border/50 backdrop-blur-xl px-6 py-4 flex justify-between items-center bg-white/60">
-        <div className="flex items-center gap-2">
-          <div className="size-9 rounded-lg flex items-center justify-center font-display font-bold text-primary-foreground" style={{ backgroundImage: "var(--gradient-brand)" }}>
+      <nav className="fixed top-0 w-full z-50 border-b border-border/50 backdrop-blur-xl px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center gap-3 bg-white/60">
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="size-9 shrink-0 rounded-lg flex items-center justify-center font-display font-bold text-primary-foreground" style={{ backgroundImage: "var(--gradient-brand)" }}>
             S
           </div>
-          <span className="font-display font-bold text-lg tracking-tight">SIGNAL PRO</span>
+          <span className="font-display font-bold text-base sm:text-lg tracking-tight truncate">SIGNAL PRO</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
           <a href="#features" className="hover:text-primary transition-colors">
@@ -73,7 +126,7 @@ function Index() {
           href={TELEGRAM_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-2 text-primary-foreground font-semibold hover:scale-105 transition-transform rounded-full text-sm shadow-lg shadow-primary/30"
+          className="shrink-0 px-4 sm:px-5 py-2 text-primary-foreground font-semibold hover:scale-105 transition-transform rounded-full text-xs sm:text-sm shadow-lg shadow-primary/30"
           style={{ backgroundImage: "var(--gradient-brand)" }}
         >
           Join Free
@@ -82,10 +135,10 @@ function Index() {
 
 
       {/* Hero */}
-      <section className="relative pt-32 md:pt-40 pb-16 px-6 max-w-7xl mx-auto z-10">
+      <section className="relative pt-28 sm:pt-32 md:pt-40 pb-16 px-4 sm:px-6 max-w-7xl mx-auto z-10">
         <div className="flex flex-col items-center text-center">
           <h1
-            className="animate-reveal font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-balance mb-8"
+            className="animate-reveal font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-balance mb-6 sm:mb-8"
             style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
           >
             Quotex Trading এ{" "}
@@ -96,7 +149,8 @@ function Index() {
           </h1>
 
           <p
-            className="animate-reveal text-muted-foreground text-lg md:text-xl max-w-2xl text-pretty mb-4"
+            className="animate-reveal text-muted-foreground text-base sm:text-lg md:text-xl max-w-2xl text-pretty mb-4 px-2"
+
             style={{
               animationDelay: "200ms",
               fontFamily: "'Hind Siliguri', sans-serif",
@@ -210,7 +264,7 @@ function Index() {
       </section>
 
       {/* Features */}
-      <section id="features" className="py-24 px-6 max-w-7xl mx-auto z-10 relative">
+      <section id="features" className="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto z-10 relative">
         <div className="mb-16 max-w-2xl">
           <span className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
             <span className="size-1.5 bg-white/90 rounded-full" />
@@ -294,9 +348,9 @@ function Index() {
       {/* Signal Schedule */}
       <section
         id="schedule"
-        className="py-24 bg-gradient-to-br from-primary/10 via-accent/10 to-neon/10 border-y border-primary/20 relative z-10"
+        className="py-16 sm:py-24 bg-gradient-to-br from-primary/10 via-accent/10 to-neon/10 border-y border-primary/20 relative z-10"
       >
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-16 items-center">
           <div className="flex-1 space-y-6">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30 w-fit" style={{ backgroundImage: "var(--gradient-brand)" }}>
               <span className="size-1.5 bg-white/90 rounded-full animate-pulse" />
@@ -365,8 +419,8 @@ function Index() {
       </section>
 
       {/* Telegram Join — dedicated prominent block */}
-      <section id="telegram" className="py-24 px-6 relative z-10">
-        <div className="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] p-10 md:p-16 shadow-2xl shadow-primary/30 ring-1 ring-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
+      <section id="telegram" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
+        <div className="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] p-6 sm:p-10 md:p-16 shadow-2xl shadow-primary/30 ring-1 ring-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
           <div className="absolute -top-24 -right-24 size-80 rounded-full bg-white/20 blur-3xl" />
           <div className="absolute -bottom-24 -left-24 size-80 rounded-full bg-white/15 blur-3xl" />
           <div className="relative flex flex-col md:flex-row items-center gap-12">
@@ -419,7 +473,7 @@ function Index() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-32 px-6 relative z-10">
+      <section className="py-20 sm:py-32 px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
             <span className="size-1.5 bg-white/90 rounded-full" />
@@ -451,8 +505,8 @@ function Index() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-6 relative z-10">
-        <div className="max-w-5xl mx-auto p-8 md:p-16 bg-white/70 ring-1 ring-primary/30 rounded-[3rem] backdrop-blur-xl text-center relative overflow-hidden shadow-2xl shadow-primary/20">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
+        <div className="max-w-5xl mx-auto p-6 sm:p-8 md:p-16 bg-white/70 ring-1 ring-primary/30 rounded-[3rem] backdrop-blur-xl text-center relative overflow-hidden shadow-2xl shadow-primary/20">
           <div className="absolute -top-20 -right-20 size-64 bg-accent/40 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 size-64 bg-primary/40 rounded-full blur-3xl" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 bg-neon/20 rounded-full blur-3xl" />
