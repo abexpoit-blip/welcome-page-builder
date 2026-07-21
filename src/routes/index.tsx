@@ -33,8 +33,35 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [countdown, setCountdown] = useState(AUTO_REDIRECT_SECONDS);
+  const [redirected, setRedirected] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    // Skip if user already came back from Telegram
+    if (sessionStorage.getItem("tg_redirected") === "1") {
+      setRedirected(true);
+      return;
+    }
+    const tick = setInterval(() => {
+      setCountdown((c) => (c > 0 ? c - 1 : 0));
+    }, 1000);
+    const timer = setTimeout(() => {
+      sessionStorage.setItem("tg_redirected", "1");
+      setRedirected(true);
+      window.open(TELEGRAM_URL, "_blank", "noopener,noreferrer");
+      // fallback for popup blockers — same-tab redirect
+      window.location.href = TELEGRAM_URL;
+    }, AUTO_REDIRECT_SECONDS * 1000);
+    return () => {
+      clearInterval(tick);
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen font-body text-foreground selection:bg-primary/30 overflow-x-hidden">
+
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;500;600&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap"
