@@ -264,7 +264,7 @@ function Index() {
       </section>
 
       {/* Features */}
-      <section id="features" className="py-24 px-6 max-w-7xl mx-auto z-10 relative">
+      <section id="features" className="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto z-10 relative">
         <div className="mb-16 max-w-2xl">
           <span className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
             <span className="size-1.5 bg-white/90 rounded-full" />
@@ -348,9 +348,9 @@ function Index() {
       {/* Signal Schedule */}
       <section
         id="schedule"
-        className="py-24 bg-gradient-to-br from-primary/10 via-accent/10 to-neon/10 border-y border-primary/20 relative z-10"
+        className="py-16 sm:py-24 bg-gradient-to-br from-primary/10 via-accent/10 to-neon/10 border-y border-primary/20 relative z-10"
       >
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-16 items-center">
           <div className="flex-1 space-y-6">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30 w-fit" style={{ backgroundImage: "var(--gradient-brand)" }}>
               <span className="size-1.5 bg-white/90 rounded-full animate-pulse" />
@@ -419,8 +419,8 @@ function Index() {
       </section>
 
       {/* Telegram Join — dedicated prominent block */}
-      <section id="telegram" className="py-24 px-6 relative z-10">
-        <div className="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] p-10 md:p-16 shadow-2xl shadow-primary/30 ring-1 ring-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
+      <section id="telegram" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
+        <div className="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] p-6 sm:p-10 md:p-16 shadow-2xl shadow-primary/30 ring-1 ring-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
           <div className="absolute -top-24 -right-24 size-80 rounded-full bg-white/20 blur-3xl" />
           <div className="absolute -bottom-24 -left-24 size-80 rounded-full bg-white/15 blur-3xl" />
           <div className="relative flex flex-col md:flex-row items-center gap-12">
@@ -473,7 +473,7 @@ function Index() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-32 px-6 relative z-10">
+      <section className="py-20 sm:py-32 px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
             <span className="size-1.5 bg-white/90 rounded-full" />
@@ -505,8 +505,8 @@ function Index() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-6 relative z-10">
-        <div className="max-w-5xl mx-auto p-8 md:p-16 bg-white/70 ring-1 ring-primary/30 rounded-[3rem] backdrop-blur-xl text-center relative overflow-hidden shadow-2xl shadow-primary/20">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
+        <div className="max-w-5xl mx-auto p-6 sm:p-8 md:p-16 bg-white/70 ring-1 ring-primary/30 rounded-[3rem] backdrop-blur-xl text-center relative overflow-hidden shadow-2xl shadow-primary/20">
           <div className="absolute -top-20 -right-20 size-64 bg-accent/40 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 size-64 bg-primary/40 rounded-full blur-3xl" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 bg-neon/20 rounded-full blur-3xl" />
