@@ -628,15 +628,20 @@ function Index() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8 text-xs font-mono uppercase tracking-widest text-muted-foreground">
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2 mb-2">
-              <div className="size-7 rounded-md flex items-center justify-center font-display font-bold text-primary-foreground text-xs" style={{ backgroundImage: "var(--gradient-brand)" }}>
-                S
-              </div>
+              <img
+                src={logoImg.url}
+                alt="Mithitrader logo"
+                width={28}
+                height={28}
+                loading="lazy"
+                className="size-7 object-contain"
+              />
 
               <span className="font-display font-bold text-sm text-foreground normal-case tracking-tight">
-                SIGNAL PRO
+                MITHITRADER
               </span>
             </div>
-            <p>© 2026 Signal Pro. All rights reserved.</p>
+            <p>© 2026 Mithitrader. All rights reserved.</p>
             <p
               className="opacity-60 normal-case tracking-normal"
               style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
