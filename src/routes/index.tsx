@@ -460,12 +460,17 @@ function Index() {
             </div>
             <div className="w-full md:w-80 shrink-0">
               <div className="rounded-3xl bg-white/95 backdrop-blur-xl p-8 shadow-2xl ring-1 ring-white/50 text-center">
-                <div className="mx-auto size-20 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-primary/40" style={{ backgroundImage: "var(--gradient-brand)" }}>
-                  <svg className="size-10 text-primary-foreground" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.941z" />
-                  </svg>
+                <div className="mx-auto size-24 rounded-2xl flex items-center justify-center mb-5 bg-white ring-1 ring-primary/20 shadow-lg shadow-primary/30">
+                  <img
+                    src={logoImg.url}
+                    alt="Mithitrader logo"
+                    width={96}
+                    height={96}
+                    loading="lazy"
+                    className="size-20 object-contain"
+                  />
                 </div>
-                <div className="font-display font-bold text-lg text-foreground" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>Signal Pro Public</div>
+                <div className="font-display font-bold text-lg text-foreground" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>Mithitrader Public</div>
                 <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mt-1">Free Signal Channel</div>
                 <div className="mt-5 flex items-center justify-center gap-2 text-xs font-semibold text-emerald-600">
                   <span className="size-2 bg-emerald-500 rounded-full animate-pulse" />
