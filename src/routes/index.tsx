@@ -79,13 +79,37 @@ function Index() {
       </div>
 
 
+      {/* Auto-redirect banner */}
+      {!redirected && (
+        <div
+          className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[60] px-4 sm:px-6 py-3 rounded-full text-primary-foreground text-xs sm:text-sm font-semibold shadow-2xl shadow-primary/40 flex items-center gap-3 backdrop-blur-xl max-w-[92vw]"
+          style={{ backgroundImage: "var(--gradient-brand)", fontFamily: "'Hind Siliguri', sans-serif" }}
+        >
+          <span className="size-2 bg-white rounded-full animate-pulse shrink-0" />
+          <span className="truncate">
+            {countdown > 0
+              ? `${countdown} সেকেন্ড এ Telegram এ redirect হবে...`
+              : "Telegram এ redirect হচ্ছে..."}
+          </span>
+          <a
+            href={TELEGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 shrink-0 px-3 py-1 bg-white/25 hover:bg-white/40 rounded-full text-[11px] font-bold transition"
+          >
+            এখনি Join
+          </a>
+        </div>
+      )}
+
+
       {/* Navbar */}
-      <nav className="fixed top-0 w-full z-50 border-b border-border/50 backdrop-blur-xl px-6 py-4 flex justify-between items-center bg-white/60">
-        <div className="flex items-center gap-2">
-          <div className="size-9 rounded-lg flex items-center justify-center font-display font-bold text-primary-foreground" style={{ backgroundImage: "var(--gradient-brand)" }}>
+      <nav className="fixed top-0 w-full z-50 border-b border-border/50 backdrop-blur-xl px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center gap-3 bg-white/60">
+        <div className="flex items-center gap-2 min-w-0">
+          <div className="size-9 shrink-0 rounded-lg flex items-center justify-center font-display font-bold text-primary-foreground" style={{ backgroundImage: "var(--gradient-brand)" }}>
             S
           </div>
-          <span className="font-display font-bold text-lg tracking-tight">SIGNAL PRO</span>
+          <span className="font-display font-bold text-base sm:text-lg tracking-tight truncate">SIGNAL PRO</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
           <a href="#features" className="hover:text-primary transition-colors">
@@ -102,7 +126,7 @@ function Index() {
           href={TELEGRAM_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-2 text-primary-foreground font-semibold hover:scale-105 transition-transform rounded-full text-sm shadow-lg shadow-primary/30"
+          className="shrink-0 px-4 sm:px-5 py-2 text-primary-foreground font-semibold hover:scale-105 transition-transform rounded-full text-xs sm:text-sm shadow-lg shadow-primary/30"
           style={{ backgroundImage: "var(--gradient-brand)" }}
         >
           Join Free
@@ -111,10 +135,10 @@ function Index() {
 
 
       {/* Hero */}
-      <section className="relative pt-32 md:pt-40 pb-16 px-6 max-w-7xl mx-auto z-10">
+      <section className="relative pt-28 sm:pt-32 md:pt-40 pb-16 px-4 sm:px-6 max-w-7xl mx-auto z-10">
         <div className="flex flex-col items-center text-center">
           <h1
-            className="animate-reveal font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-balance mb-8"
+            className="animate-reveal font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-balance mb-6 sm:mb-8"
             style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
           >
             Quotex Trading এ{" "}
@@ -125,7 +149,8 @@ function Index() {
           </h1>
 
           <p
-            className="animate-reveal text-muted-foreground text-lg md:text-xl max-w-2xl text-pretty mb-4"
+            className="animate-reveal text-muted-foreground text-base sm:text-lg md:text-xl max-w-2xl text-pretty mb-4 px-2"
+
             style={{
               animationDelay: "200ms",
               fontFamily: "'Hind Siliguri', sans-serif",
