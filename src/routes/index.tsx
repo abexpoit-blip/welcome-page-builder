@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import heroImg from "@/assets/trading-hero.jpg.asset.json";
 import chartImg from "@/assets/trading-chart.jpg.asset.json";
+import logoImg from "@/assets/mithitrader-logo.png.asset.json";
 
 const TELEGRAM_URL = "https://t.me/Mithitrader07";
 const AUTO_REDIRECT_SECONDS = 5;
@@ -105,11 +106,15 @@ function Index() {
 
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 border-b border-border/50 backdrop-blur-xl px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center gap-3 bg-white/60">
-        <div className="flex items-center gap-2 min-w-0">
-          <div className="size-9 shrink-0 rounded-lg flex items-center justify-center font-display font-bold text-primary-foreground" style={{ backgroundImage: "var(--gradient-brand)" }}>
-            S
-          </div>
-          <span className="font-display font-bold text-base sm:text-lg tracking-tight truncate">SIGNAL PRO</span>
+        <div className="flex items-center gap-2.5 min-w-0">
+          <img
+            src={logoImg.url}
+            alt="Mithitrader logo"
+            width={40}
+            height={40}
+            className="size-9 sm:size-10 shrink-0 object-contain drop-shadow-[0_4px_12px_rgba(168,85,247,0.35)]"
+          />
+          <span className="font-display font-bold text-base sm:text-lg tracking-tight truncate">MITHITRADER</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
           <a href="#features" className="hover:text-primary transition-colors">
@@ -455,12 +460,17 @@ function Index() {
             </div>
             <div className="w-full md:w-80 shrink-0">
               <div className="rounded-3xl bg-white/95 backdrop-blur-xl p-8 shadow-2xl ring-1 ring-white/50 text-center">
-                <div className="mx-auto size-20 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-primary/40" style={{ backgroundImage: "var(--gradient-brand)" }}>
-                  <svg className="size-10 text-primary-foreground" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.941z" />
-                  </svg>
+                <div className="mx-auto size-24 rounded-2xl flex items-center justify-center mb-5 bg-white ring-1 ring-primary/20 shadow-lg shadow-primary/30">
+                  <img
+                    src={logoImg.url}
+                    alt="Mithitrader logo"
+                    width={96}
+                    height={96}
+                    loading="lazy"
+                    className="size-20 object-contain"
+                  />
                 </div>
-                <div className="font-display font-bold text-lg text-foreground" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>Signal Pro Public</div>
+                <div className="font-display font-bold text-lg text-foreground" style={{ fontFamily: "'Hind Siliguri', sans-serif" }}>Mithitrader Public</div>
                 <div className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest mt-1">Free Signal Channel</div>
                 <div className="mt-5 flex items-center justify-center gap-2 text-xs font-semibold text-emerald-600">
                   <span className="size-2 bg-emerald-500 rounded-full animate-pulse" />
@@ -618,15 +628,20 @@ function Index() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8 text-xs font-mono uppercase tracking-widest text-muted-foreground">
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2 mb-2">
-              <div className="size-7 rounded-md flex items-center justify-center font-display font-bold text-primary-foreground text-xs" style={{ backgroundImage: "var(--gradient-brand)" }}>
-                S
-              </div>
+              <img
+                src={logoImg.url}
+                alt="Mithitrader logo"
+                width={28}
+                height={28}
+                loading="lazy"
+                className="size-7 object-contain"
+              />
 
               <span className="font-display font-bold text-sm text-foreground normal-case tracking-tight">
-                SIGNAL PRO
+                MITHITRADER
               </span>
             </div>
-            <p>© 2026 Signal Pro. All rights reserved.</p>
+            <p>© 2026 Mithitrader. All rights reserved.</p>
             <p
               className="opacity-60 normal-case tracking-normal"
               style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
