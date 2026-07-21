@@ -106,11 +106,15 @@ function Index() {
 
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 border-b border-border/50 backdrop-blur-xl px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center gap-3 bg-white/60">
-        <div className="flex items-center gap-2 min-w-0">
-          <div className="size-9 shrink-0 rounded-lg flex items-center justify-center font-display font-bold text-primary-foreground" style={{ backgroundImage: "var(--gradient-brand)" }}>
-            S
-          </div>
-          <span className="font-display font-bold text-base sm:text-lg tracking-tight truncate">SIGNAL PRO</span>
+        <div className="flex items-center gap-2.5 min-w-0">
+          <img
+            src={logoImg.url}
+            alt="Mithitrader logo"
+            width={40}
+            height={40}
+            className="size-9 sm:size-10 shrink-0 object-contain drop-shadow-[0_4px_12px_rgba(168,85,247,0.35)]"
+          />
+          <span className="font-display font-bold text-base sm:text-lg tracking-tight truncate">MITHITRADER</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
           <a href="#features" className="hover:text-primary transition-colors">
