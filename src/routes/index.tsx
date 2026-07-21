@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import heroImg from "@/assets/trading-hero.jpg.asset.json";
 import chartImg from "@/assets/trading-chart.jpg.asset.json";
 
-const TELEGRAM_URL = "https://t.me/";
+const TELEGRAM_URL = "https://t.me/Mithitrader07";
+const AUTO_REDIRECT_SECONDS = 5;
 
 export const Route = createFileRoute("/")({
   head: () => ({
