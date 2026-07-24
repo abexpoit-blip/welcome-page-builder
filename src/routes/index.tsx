@@ -566,6 +566,9 @@ function Index() {
         </div>
       </section>
 
+      <ReviewsSection />
+      <LiveJoinTicker />
+
       {/* FAQ */}
       <section id="faq" className="py-24 px-6 max-w-4xl mx-auto relative z-10">
         <div className="mb-12">
