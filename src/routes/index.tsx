@@ -259,7 +259,7 @@ function Index() {
 
           {/* Stats row */}
           <div
-            className="animate-reveal grid grid-cols-3 gap-4 md:gap-8 mt-12 w-full max-w-2xl"
+            className="animate-reveal grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 mt-12 w-full max-w-2xl"
             style={{ animationDelay: "400ms" }}
           >
             {[
@@ -267,8 +267,8 @@ function Index() {
               { n: "87%", l: "Win Rate" },
               { n: "2×", l: "Daily Signals" },
             ].map((s) => (
-              <div key={s.l} className="p-4 bg-white/70 ring-1 ring-primary/20 rounded-2xl backdrop-blur-xl shadow-lg shadow-primary/10">
-                <div className="font-display text-2xl md:text-4xl font-bold text-primary">
+              <div key={s.l} className="p-3 sm:p-4 bg-white/70 ring-1 ring-primary/20 rounded-2xl backdrop-blur-xl shadow-lg shadow-primary/10">
+                <div className="font-display text-xl sm:text-2xl md:text-4xl font-bold text-primary">
                   {s.n}
                 </div>
                 <div className="text-xs text-muted-foreground mt-1">{s.l}</div>
@@ -316,9 +316,9 @@ function Index() {
 
       {/* Marquee */}
       <section className="py-8 border-y border-primary/20 overflow-hidden bg-white/50 backdrop-blur-xl relative z-10">
-        <div className="flex gap-16 animate-marquee whitespace-nowrap font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground/70">
+        <div className="flex gap-8 sm:gap-16 animate-marquee whitespace-nowrap font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground/70">
           {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex gap-16 shrink-0">
+            <div key={i} className="flex gap-8 sm:gap-16 shrink-0">
               <span>◆ Free Signal</span>
               <span>◆ Daily 2 Signals</span>
               <span>◆ Live Market Update</span>
@@ -340,7 +340,7 @@ function Index() {
           </span>
 
           <h2
-            className="font-display text-4xl md:text-6xl font-bold tracking-tight text-balance"
+            className="font-display text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-balance"
             style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
           >
             সবকিছু <span className="text-primary">ফ্রি</span>, সব সময়।
@@ -387,7 +387,7 @@ function Index() {
           ].map((f) => (
             <div
               key={f.tag}
-              className="p-8 bg-white/70 ring-1 ring-primary/15 rounded-[2rem] hover:ring-primary/50 hover:-translate-y-1 transition-all duration-500 flex flex-col gap-5 group backdrop-blur-xl shadow-lg shadow-primary/5 hover:shadow-primary/20"
+              className="p-6 sm:p-8 bg-white/70 ring-1 ring-primary/15 rounded-[2rem] hover:ring-primary/50 hover:-translate-y-1 transition-all duration-500 flex flex-col gap-5 group backdrop-blur-xl shadow-lg shadow-primary/5 hover:shadow-primary/20"
 
             >
               <div className="flex items-center justify-between">
@@ -397,7 +397,7 @@ function Index() {
                 </div>
               </div>
               <h3
-                className="font-display text-2xl font-semibold tracking-tight"
+                className="font-display text-xl sm:text-2xl font-semibold tracking-tight"
                 style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
               >
                 {f.title}
@@ -454,7 +454,7 @@ function Index() {
                   className="flex items-center justify-between p-4 bg-white/70 ring-1 ring-primary/15 rounded-2xl backdrop-blur-xl shadow-md shadow-primary/5"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="font-display text-2xl font-bold text-primary">{s.time}</div>
+                    <div className="font-display text-lg sm:text-2xl font-bold text-primary">{s.time}</div>
                     <div
                       className="text-sm text-foreground"
                       style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
@@ -491,7 +491,7 @@ function Index() {
         <div className="max-w-6xl mx-auto relative overflow-hidden rounded-[2.5rem] p-6 sm:p-10 md:p-16 shadow-2xl shadow-primary/30 ring-1 ring-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
           <div className="absolute -top-24 -right-24 size-80 rounded-full bg-white/20 blur-3xl" />
           <div className="absolute -bottom-24 -left-24 size-80 rounded-full bg-white/15 blur-3xl" />
-          <div className="relative flex flex-col md:flex-row items-center gap-12">
+          <div className="relative flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <div className="flex-1 text-primary-foreground">
               <span className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md ring-1 ring-white/30 font-mono text-[10px] uppercase tracking-[0.25em] font-semibold">
                 <span className="size-1.5 bg-white rounded-full animate-pulse" />
@@ -554,7 +554,7 @@ function Index() {
           </span>
 
           <blockquote
-            className="font-display text-2xl md:text-4xl font-semibold leading-tight tracking-tight text-balance mb-12"
+            className="font-display text-xl sm:text-2xl md:text-4xl font-semibold leading-tight tracking-tight text-balance mb-12"
             style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
           >
             "আগে দিনে ৫-৬ টা লস দিতাম। এই Group এ Join করার পর signal follow করে এখন প্রতিদিন
@@ -586,7 +586,7 @@ function Index() {
 
           <div className="relative">
             <h2
-              className="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight text-balance"
+              className="font-display text-3xl sm:text-4xl md:text-6xl font-bold mb-6 tracking-tight text-balance"
               style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
             >
               Daily Free Live Signal, Market Update এবং Trading Guideline পেতে এখনি Join করুন।
