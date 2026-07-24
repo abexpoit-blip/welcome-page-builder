@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import heroImg from "@/assets/trading-hero.jpg.asset.json";
 import chartImg from "@/assets/trading-chart.jpg.asset.json";
 import logoImg from "@/assets/mithitrader-logo.png.asset.json";
+import { ReviewsSection, LiveJoinTicker } from "@/components/ReviewsSection";
 
 const TELEGRAM_URL = "https://t.me/Mithitrader07";
-const AUTO_REDIRECT_SECONDS = 5;
+const AUTO_REDIRECT_SECONDS = 50;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -565,8 +566,11 @@ function Index() {
         </div>
       </section>
 
+      <ReviewsSection />
+      <LiveJoinTicker />
+
       {/* FAQ */}
-      <section id="faq" className="py-24 px-6 max-w-4xl mx-auto relative z-10">
+      <section id="faq" className="py-20 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto relative z-10">
         <div className="mb-12">
           <span className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full text-primary-foreground font-mono text-[10px] uppercase tracking-[0.25em] font-semibold shadow-lg shadow-primary/30" style={{ backgroundImage: "var(--gradient-brand)" }}>
             <span className="size-1.5 bg-white/90 rounded-full" />
