@@ -640,44 +640,28 @@ function Index() {
           </span>
 
           <h2
-            className="font-display text-4xl md:text-5xl font-bold tracking-tight"
+            className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight"
             style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
           >
             আপনার প্রশ্নের উত্তর।
           </h2>
         </div>
         <div className="space-y-4">
-          {[
-            {
-              q: "Group এ Join করতে কি টাকা লাগবে?",
-              a: "না। আমাদের Public Group সম্পূর্ণ ফ্রি। কোনো ফি বা hidden charge নেই।",
-            },
-            {
-              q: "প্রতিদিন কতটি Signal পাবো?",
-              a: "প্রতিদিন ২টি Free Live Signal (দুপুর ২টা ও রাত ৮টায়) এবং News Signal event অনুযায়ী পাবেন।",
-            },
-            {
-              q: "Signal এর accuracy কেমন?",
-              a: "আমাদের গড় win rate ৮৫-৯০%। তবে ট্রেডিং এ risk থাকে, তাই proper money management follow করবেন।",
-            },
-            {
-              q: "নতুন হলে কি বুঝতে পারবো?",
-              a: "অবশ্যই। আমরা Bengali তে সহজভাবে guideline দেই। নতুনদের জন্য step-by-step tutorial ও থাকে।",
-            },
-          ].map((item) => (
+          {FAQ_ITEMS.map((item) => (
             <details
               key={item.q}
-              className="group p-6 bg-white/70 ring-1 ring-primary/15 rounded-2xl backdrop-blur-xl hover:ring-primary/50 transition-all shadow-md shadow-primary/5"
+              className="group p-5 sm:p-6 bg-white/70 ring-1 ring-primary/15 rounded-2xl backdrop-blur-xl hover:ring-primary/50 transition-all shadow-md shadow-primary/5"
             >
               <summary
-                className="flex items-center justify-between cursor-pointer font-semibold text-lg"
+                className="flex items-center justify-between gap-4 cursor-pointer font-semibold text-base sm:text-lg"
                 style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
               >
                 {item.q}
-                <span className="text-primary text-2xl group-open:rotate-45 transition-transform">
+                <span className="text-primary text-2xl shrink-0 group-open:rotate-45 transition-transform">
                   +
                 </span>
               </summary>
+
               <p
                 className="mt-4 text-muted-foreground leading-relaxed"
                 style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
