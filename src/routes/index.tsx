@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import heroImg from "@/assets/trading-hero.jpg.asset.json";
 import chartImg from "@/assets/trading-chart.jpg.asset.json";
 import logoImg from "@/assets/mithitrader-logo.png.asset.json";
+import { ReviewsSection, LiveJoinTicker } from "@/components/ReviewsSection";
 
 const TELEGRAM_URL = "https://t.me/Mithitrader07";
-const AUTO_REDIRECT_SECONDS = 5;
+const AUTO_REDIRECT_SECONDS = 50;
 
 export const Route = createFileRoute("/")({
   head: () => ({
