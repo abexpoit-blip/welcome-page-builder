@@ -32,6 +32,14 @@ const PAGE_TITLE = "Mithitrader — Free Quotex Live Signal Group (Daily 2 Signa
 const PAGE_DESC =
   "Quotex Trading এ লসে আছেন? Mithitrader Public Group এ ফ্রি জয়েন করুন — প্রতিদিন দুপুর ২টা ও রাত ৮টায় Free Live Signal, News Signal, Market Update ও Bangla Trading Guideline।";
 
+// Facebook/Telegram share preview (boost-friendly Bangla copy)
+const OG_TITLE = "🔥 ফ্রি Live Signal — Mithitrader Public Group এ Join করুন";
+const OG_DESC =
+  "প্রতিদিন দুপুর ২টা ও রাত ৮টায় ফ্রি Live Signal, News Signal, Market Update এবং Bangla Trading Guideline — ১০০% ফ্রি, এখনি Telegram Group এ Join করুন।";
+const OG_IMAGE = `${SITE_URL}/assets/og-cover.jpg`;
+
+
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
