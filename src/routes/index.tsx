@@ -7,32 +7,94 @@ import { ReviewsSection, LiveJoinTicker } from "@/components/ReviewsSection";
 
 const TELEGRAM_URL = "https://t.me/Mithitrader07";
 const AUTO_REDIRECT_SECONDS = 50;
+const SITE_URL = "https://mithitrader.com";
+
+const FAQ_ITEMS = [
+  {
+    q: "Group এ Join করতে কি টাকা লাগবে?",
+    a: "না। আমাদের Public Group সম্পূর্ণ ফ্রি। কোনো ফি বা hidden charge নেই।",
+  },
+  {
+    q: "প্রতিদিন কতটি Signal পাবো?",
+    a: "প্রতিদিন ২টি Free Live Signal (দুপুর ২টা ও রাত ৮টায়) এবং News Signal event অনুযায়ী পাবেন।",
+  },
+  {
+    q: "Signal এর accuracy কেমন?",
+    a: "আমাদের গড় win rate ৮৫-৯০%। তবে ট্রেডিং এ risk থাকে, তাই proper money management follow করবেন।",
+  },
+  {
+    q: "নতুন হলে কি বুঝতে পারবো?",
+    a: "অবশ্যই। আমরা Bengali তে সহজভাবে guideline দেই। নতুনদের জন্য step-by-step tutorial ও থাকে।",
+  },
+];
+
+const PAGE_TITLE = "Mithitrader — Free Quotex Live Signal Group (Daily 2 Signals)";
+const PAGE_DESC =
+  "Quotex Trading এ লসে আছেন? Mithitrader Public Group এ ফ্রি জয়েন করুন — প্রতিদিন দুপুর ২টা ও রাত ৮টায় Free Live Signal, News Signal, Market Update ও Bangla Trading Guideline।";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Free Quotex Signals — Daily Live Trading Signal Group" },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
       {
-        name: "description",
+        name: "keywords",
         content:
-          "Quotex এবং Trading এ লসে থাকলে আমাদের Public Group এ ফ্রি জয়েন করুন। প্রতিদিন ২টা ও রাত ৮টায় Free Live Signal, News Signal, Market Update ও Trading Guideline।",
+          "quotex signal, free trading signal, bangla trading signal, quotex bangladesh, live signal telegram, binary trading guideline, mithitrader",
       },
-      { property: "og:title", content: "Free Quotex Signals — Daily Live Signal Group" },
-      {
-        property: "og:description",
-        content:
-          "প্রতিদিন Free Live Signal, Market Update ও Trading Guideline পেতে এখনি Public Group এ Join করুন।",
-      },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:site_name", content: "Mithitrader" },
+      { property: "og:locale", content: "bn_BD" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-      { property: "og:image", content: heroImg.url },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: `${SITE_URL}${heroImg.url}` },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: heroImg.url },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESC },
+      { name: "twitter:image", content: `${SITE_URL}${heroImg.url}` },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
+              name: "Mithitrader",
+              url: `${SITE_URL}/`,
+              logo: `${SITE_URL}${logoImg.url}`,
+              description: PAGE_DESC,
+              sameAs: [TELEGRAM_URL],
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              url: `${SITE_URL}/`,
+              name: "Mithitrader",
+              inLanguage: "bn-BD",
+              publisher: { "@id": `${SITE_URL}/#organization` },
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: FAQ_ITEMS.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: Index,
 });
+
 
 function Index() {
   const [countdown, setCountdown] = useState(AUTO_REDIRECT_SECONDS);
